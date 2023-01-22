@@ -1,0 +1,128 @@
+
+
+<h1 style="color:red;text-align:center">Working with different types of form components</h1>
+
+<form action="formurl" method="POST">
+    <table bgcolor="cyan" align="center">
+           <tr>
+               <td> person name :: </td>
+               <td> <input type="text" name="pname" maxlength="15"><span style="color:red;">*</span></td>
+           </tr>
+           <tr>
+               <td> person age :: </td>
+               <td> <input type="password" name="page" required><span style="color:red;">*</span></td>
+           </tr>
+           <tr>
+               <td> person address :: </td>
+               <td><textarea rows="5" cols="20" name="paddrs" maxlength="100">
+               </textarea></td>
+           </tr>
+           <tr>
+               <td> gender :: </td>
+               <td>
+                    <input type="radio" name="gender" value="M">Male &nbsp;&nbsp;
+                    <input type="radio" name="gender" value="F" checked>Female 
+               </td>
+           </tr>
+           <tr>
+               <td> Marital Status :: </td>
+               <td>
+                    <input type="checkbox" name="ms" value="married">Married &nbsp;&nbsp;             
+               </td>
+           </tr>
+           
+           <tr>
+               <td> Qualification :: </td>
+               <td>
+                    <select name="qlfy">
+                     <option value="" selected>---select---</option>
+                       <option value="Engineering">B.E/B.TECH</option>
+                       <option value="Medico">MBBS/MD</option>
+                       <option value="Accountant">B.com/M.com</option>
+                       <option value="Arts">BA  /MA</option>
+                    </select>
+               </td>
+           </tr> 
+           
+           <tr>
+               <td> Languages known :: </td>
+               <td>
+                    <select name="languages" multiple>
+                       <option value="arbi">Arabic</option>
+                       <option value="hindi" selected>Hindi</option>
+                       <option value="english">English</option>
+                       <option value="urdu">Urdu</option>
+                       <option value="punjabi">Punjabi</option>
+                    </select>
+               </td>
+           </tr> 
+           
+             <tr>
+               <td>Hobbies</td>
+               <td>
+                    <input type="checkbox" name="hb" value="reading" checked>Reading &nbsp;&nbsp;
+                    <input type="checkbox" name="hb" value="watching">WatchingTV &nbsp;&nbsp;
+                    <input type="checkbox" name="hb" value="playing">Playing Cricket &nbsp;&nbsp;
+                    <input type="checkbox" name="hb" value="roaming">Travelling &nbsp;&nbsp;                  
+               </td>
+           </tr> 
+           <tr>
+               <td>DOB</td>
+               <td><input type="date" name="dob"></td>
+            </tr>
+            
+            <tr>
+               <td>Time of Birth</td>
+               <td><input type="time" name="tob"></td>
+            </tr>
+            
+            <tr>
+               <td>Month name of Birth</td>
+               <td><input type="month" name="mob"></td>
+            </tr>
+            
+            <tr>
+               <td>Week number name of Birth in DOB Year</td>
+               <td><input type="week" name="wdb"></td>
+            </tr>
+            
+            <tr>
+               <td>select fav number</td>
+               <td><input type="range" min="0" max="20" name="favNumber"></td>
+            </tr>
+            
+            <tr>
+               <td>Phone number</td>
+               <td><input type="tel" name="mobileNo"></td>
+            </tr>
+            
+            <tr>
+               <td>email ID</td>
+               <td><input type="email" name="mail"></td>
+            </tr>
+            
+            <tr>
+               <td>Favourite Color</td>
+               <td><input type="color" name="favColor"></td>
+            </tr>
+            
+            <tr>
+               <td>Person Income</td>
+               <td><input type="number" name="income" min="10000" max="2000000"></td>
+            </tr>
+            
+            <tr>
+               <td>FB url</td>
+               <td><input type="url" name="fburl"></td>
+            </tr>
+            
+            <tr>
+               <td>Fav Google search string</td>
+               <td><input type="search" name="favSearch"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="process Details"></td>
+                <td><input type="reset" value="cancel"></td>
+            </tr>    
+    </table> 
+</form>
