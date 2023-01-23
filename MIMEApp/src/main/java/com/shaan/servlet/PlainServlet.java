@@ -7,8 +7,23 @@ import java.io.*;
 
 public class PlainServlet extends HttpServlet
 {
+	static {
+		System.out.println("PlainServlet:: static block");
+	}
+	
+	public PlainServlet() {
+		System.out.println("PlainServlet:: 0-param constructor ");
+	}
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("PlainServlet.init(ServletConfig cg)");
+	}
+	
+	
 	public void service(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException{
-          //set content type
+		   System.out.println("PlainServlet.service()");
+		  //set content type
 		  res.setContentType("text/plain");
 		  //get PrintWriter stream
 		  PrintWriter pw=res.getWriter();

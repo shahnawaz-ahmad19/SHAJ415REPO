@@ -7,8 +7,23 @@ import java.io.*;
 
 public class XmlServlet extends HttpServlet
 {
+	
+	static {
+		System.out.println("XmlServlet:: static block");
+	}
+	
+	public XmlServlet() {
+		System.out.println("XmlServlet:: 0-param constructor ");
+	}
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("XmlServlet.init(ServletConfig cg)");
+	}
+	
 	public void service(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException{
-          //set content type
+        System.out.println("XmlServlet.service()");  
+		//set content type
 		  res.setContentType("text/xml");
 		  //get PrintWriter stream
 		  PrintWriter pw=res.getWriter();

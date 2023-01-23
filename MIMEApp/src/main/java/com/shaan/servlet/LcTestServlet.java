@@ -27,6 +27,7 @@ public class LcTestServlet extends HttpServlet {
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		System.out.println("LcTestServlet.service(req,res)");
+		//destroy();
 		//get Print Writer
 		PrintWriter pw=res.getWriter();
 		//set response content type
@@ -35,6 +36,10 @@ public class LcTestServlet extends HttpServlet {
 		pw.println("<h1 style='color:red;text-align:center'>Date and Time::"+new java.util.Date()+"</h1>");
 	    //close stream
 		pw.close();
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("LcTestServlet.main(-)");
 	}
 	
 	@Override

@@ -6,6 +6,7 @@
     <servlet>
 	     <servlet-name>html</servlet-name>
 		 <servlet-class>com.shaan.servlet.HtmlServlet</servlet-class>
+		 <load-on-startup>10</load-on-startup>
 	</servlet>
 	  <!--Servlet Mapping Configuration-->
 	  <servlet-mapping>
@@ -40,6 +41,7 @@
     <servlet>
 	     <servlet-name>plain</servlet-name>
 		 <servlet-class>com.shaan.servlet.PlainServlet</servlet-class>
+		 <load-on-startup>0</load-on-startup>
 	</servlet>
 	  <!--Servlet Mapping Configuration-->
 	  <servlet-mapping>
@@ -51,6 +53,7 @@
     <servlet>
 	     <servlet-name>xml</servlet-name>
 		 <servlet-class>com.shaan.servlet.XmlServlet</servlet-class>
+		 <load-on-startup>-1</load-on-startup>
 	</servlet>
 	  <!--Servlet Mapping Configuration-->
 	  <servlet-mapping>
@@ -63,6 +66,7 @@
     <servlet>
 	     <servlet-name>lc</servlet-name>
 		 <servlet-class>com.shaan.servlet.LcTestServlet</servlet-class>
+		 <load-on-startup>1</load-on-startup>
 	</servlet>
 	  <!--Servlet Mapping Configuration-->
 	  <servlet-mapping>
