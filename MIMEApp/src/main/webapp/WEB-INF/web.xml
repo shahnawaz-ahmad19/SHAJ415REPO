@@ -57,4 +57,16 @@
 	       <servlet-name>xml</servlet-name>
 		   <url-pattern>/xmlurl</url-pattern>
 	  </servlet-mapping>
+	  
+	  
+	  	  <!--Servlet configuration -->
+    <servlet>
+	     <servlet-name>lc</servlet-name>
+		 <servlet-class>com.shaan.servlet.LcTestServlet</servlet-class>
+	</servlet>
+	  <!--Servlet Mapping Configuration-->
+	  <servlet-mapping>
+	       <servlet-name>lc</servlet-name>
+		   <url-pattern>/lcurl</url-pattern>
+	  </servlet-mapping>
 </web-app>
