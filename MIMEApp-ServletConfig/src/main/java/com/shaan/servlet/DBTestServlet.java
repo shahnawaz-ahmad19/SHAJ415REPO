@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class DBTestServlet extends HttpServlet {
 	
@@ -40,8 +42,8 @@ public class DBTestServlet extends HttpServlet {
 		}*/
 	
 	@Override
-	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		System.out.println("DBTestServlet.service(req,res)");
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("DBTestServlet.doGet(req,res)");
 		//destroy();
 		//get Print Writer
 		PrintWriter pw=res.getWriter();
