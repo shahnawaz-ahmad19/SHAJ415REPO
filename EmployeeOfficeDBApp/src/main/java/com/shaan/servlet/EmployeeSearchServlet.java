@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,18 +20,30 @@ public class EmployeeSearchServlet  extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		//get PrintWritter
 		PrintWriter pw=res.getWriter();
+		
 		//set contentType
 		res.setContentType("text/html");
+		
+		//get access to ServletConfig object
+		ServletConfig cg=getServletConfig();
+		System.out.println("EmpSearchServlet's ServletConfig obj::"+cg.hashCode());
+		
+		//read servlet init parameter values
+		String driver=cg.getInitParameter("driverClass");
+		String url=cg.getInitParameter("url");
+		String user=cg.getInitParameter("dbuser");
+		String pwd=cg.getInitParameter("dbpwd");
+		
 		//read form data
 		int no=Integer.parseInt(req.getParameter("eno"));
 		//write JDBC code
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName(driver);
 		}
 		catch (ClassNotFoundException cnf) {
 			cnf.printStackTrace();
 		}	
-		try(Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","system","oracle");
+		try(Connection con=DriverManager.getConnection(url,user,pwd);
 			       PreparedStatement ps=con.prepareStatement(GET_EMP_BY_ENO)){
 			if(ps!=null)
 				ps.setInt(1, no);		
