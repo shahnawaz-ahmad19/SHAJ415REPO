@@ -10,7 +10,8 @@
     <servlet-class>com.shaan.servlet.CustomerRegistrationServlet</servlet-class>
     <init-param>
       <param-name>Jndi</param-name>
-      <param-value>java:/comp/env/DsJndi</param-value>
+      <!-- <param-value>java:/comp/env/DsJndi</param-value> --> <!-- This is for TomCat  server JDBC Connection Pool -->
+      <param-value>java:/DsJndi</param-value> <!-- This is for WildFly server JDBC Connection Pool  -->
     </init-param>
   </servlet>
   
