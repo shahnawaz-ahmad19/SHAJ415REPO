@@ -44,6 +44,7 @@ public class EmployeeRegistrationServlet extends HttpServlet {
 			upb.setFolderstore("D:/Store");
 			upb.setOverwrite(false);
 			upb.setFilesizelimit(100*1024);
+			//complete file upload process
 			upb.store(nreq);
 			pw.println("<b> files uploaded successfully</b>");
 			//get the names of the uploaded files

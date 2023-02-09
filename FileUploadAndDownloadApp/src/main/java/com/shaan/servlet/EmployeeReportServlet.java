@@ -44,8 +44,8 @@ public class EmployeeReportServlet extends HttpServlet {
 			    	pw.println("<td>"+rs.getInt(1)+"</td>");
 			    	pw.println("<td>"+rs.getString(2)+"</td>");
 			    	pw.println("<td>"+rs.getString(3)+"</td>");
-			    	pw.println("<td><a href='downloadurl?resumeid="+rs.getInt(1)+"'>download resume</a></td>");
-			    	pw.println("<td><a href='downloadurl?photoid="+rs.getInt(1)+"'>download photo</a></td>");
+			    	pw.println("<td><a href='downloadurl?resumeId="+rs.getInt(1)+"'>download resume</a></td>");
+			    	pw.println("<td><a href='downloadurl?photoId="+rs.getInt(1)+"'>download photo</a></td>");
 			    	pw.println("<tr>");
 			    }
 			    pw.println("</table>");
