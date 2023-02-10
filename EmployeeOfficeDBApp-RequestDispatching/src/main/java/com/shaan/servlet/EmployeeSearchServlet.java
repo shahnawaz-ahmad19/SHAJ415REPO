@@ -27,6 +27,9 @@ public class EmployeeSearchServlet  extends HttpServlet{
 		
 		//set contentType
 		res.setContentType("text/html");
+		//include header content
+		RequestDispatcher rd1=req.getRequestDispatcher("/headurl");
+		rd1.include(req, res);
 		
 		//get access to ServletConfig object
 		ServletConfig cg=getServletConfig();
@@ -37,7 +40,7 @@ public class EmployeeSearchServlet  extends HttpServlet{
 		String url=cg.getInitParameter("url");
 		String user=cg.getInitParameter("dbuser");
 		String pwd=cg.getInitParameter("dbpwd");
-		pw.println("<b>Hello</b>");
+		
 		
 		//read form data
 		int no=Integer.parseInt(req.getParameter("eno"));
@@ -68,10 +71,16 @@ public class EmployeeSearchServlet  extends HttpServlet{
 			    	}//else
 			    }//if
 			    pw.println("<br><br><p style='text-align:center'><a href='search.html'>HOME</a>");
-		        //close the stream
-			    pw.close();
+		       
 			}//try with resource2
 	     }//	try with resource1	
+		
+		//include footer content
+		RequestDispatcher rd2=req.getRequestDispatcher("/footer.html");
+		rd2.include(req, res);
+		//close the stream
+		pw.close();
+		
       }//try
 	catch (Exception e) {
 		e.printStackTrace();
@@ -79,14 +88,10 @@ public class EmployeeSearchServlet  extends HttpServlet{
 		pw.println("<b>before rd.forward(-,-) </b>");
 		System.out.println("Main servlet before rd.forward(req,res)");
 		
-		/*ServletContext sc=getServletContext();
-		RequestDispatcher rd=sc.getRequestDispatcher("errorurl");*/
-		//RequestDispatcher rd=req.getRequestDispatcher("errorurl");
-		RequestDispatcher rd1=req.getRequestDispatcher("error.html");
-		rd1.forward(req, res);
-		ServletContext sc=getServletContext();
-		RequestDispatcher rd=sc.getNamedDispatcher("err");
+		
+		RequestDispatcher rd=req.getRequestDispatcher("error.html");
 		rd.forward(req, res);
+		 
 		
 		pw.println("<b>after rd.forward(-,-) </b>");
 		System.out.println("Main servlet after rd.forward(req,res)");
